@@ -6,9 +6,11 @@ $(document).ready(function() {
   // winner_count = Number of prize
   var winner_count = 2;
 
-  $('.button').css('display', 'inline-block');
-
   var audio = new Audio('sound/tantan.mp3');
+  audio.addEventListener('canplaythrough', function() {
+    $('.button').css('display', 'inline-block');
+  }, false);
+  
   var nameary = namelist.split(',');
 
   /* Random 2 Lucky Person */
