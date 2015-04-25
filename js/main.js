@@ -80,43 +80,52 @@ $(document).ready(function() {
     // Play song
     audio.play();
 
-    thisname = namechosen.pop();
-    var thisname_sub = thisname.replace(' ', '').replace('-', '').replace('(', '').replace(')', '');
-
-    console.log(thisname, thisname_sub);
-
-    // Random 3 Characters from name
-    var charchosen_id = [];
-    var charchosen = [];
-    while(charchosen.length < 3) {
-      var n = Math.floor(Math.random() * thisname_sub.length);
-      if (charchosen_id.indexOf(n) == -1) {
-        charchosen_id.push(n);
-        charchosen.push( thisname_sub[n] );
-      }
-    }
-
-    var charchosen_string = charchosen[0] + '.. ^1000' + charchosen[1] + '.. ^1000' + charchosen[2] + '.. ^1000' + 'ข้าเจอแล้ว!^1000';
-
     $('.namebox').empty().append('<span class="nameboxtype"></span>');
     $(".nameboxtype").typed({
-      strings: [charchosen_string],
+      strings: ["...^1000 ไหนดูซิ ...^2000"],
       typeSpeed: 60,
       callback: function() {
-        // Show Answer
-        $('.namebox').addClass('show').empty().text(thisname);
-        $('.logo').addClass('explode');
-      }
-    });
 
-    $('.namebox').on('click', function() {
-      // Reset Everything Back
-      $('.wrapper').removeClass('animate');
-      $('.namebox').removeClass('show');
-      $('.logo').removeClass('explode');
+        thisname = namechosen.pop();
+        var thisname_sub = thisname.replace(' ', '').replace('-', '').replace('(', '').replace(')', '');
 
-      if(namechosen.length == 0) {
-        $('.wrapper').addClass('end');
+        console.log(thisname, thisname_sub);
+
+        // Random 3 Characters from name
+        var charchosen_id = [];
+        var charchosen = [];
+        while(charchosen.length < 3) {
+          var n = Math.floor(Math.random() * thisname_sub.length);
+          if (charchosen_id.indexOf(n) == -1) {
+            charchosen_id.push(n);
+            charchosen.push( thisname_sub[n] );
+          }
+        }
+
+        var charchosen_string = charchosen[0] + '... ^600' + charchosen[1] + '... ^600' + charchosen[2] + '... ^400';
+
+        $('.namebox').empty().append('<span class="nameboxtype"></span>');
+        $(".nameboxtype").typed({
+          strings: [charchosen_string],
+          typeSpeed: 100,
+          callback: function() {
+            // Show Answer
+            $('.namebox').addClass('show').empty().text(thisname);
+            $('.logo').addClass('explode');
+          }
+        });
+
+        $('.namebox').on('click', function() {
+          // Reset Everything Back
+          $('.wrapper').removeClass('animate');
+          $('.namebox').removeClass('show');
+          $('.logo').removeClass('explode');
+
+          if(namechosen.length == 0) {
+            $('.wrapper').addClass('end');
+          }
+        });
+
       }
     });
 
