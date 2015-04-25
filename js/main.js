@@ -10,7 +10,7 @@ $(document).ready(function() {
   audio.addEventListener('canplaythrough', function() {
     $('.button').css('display', 'inline-block');
   }, false);
-  
+
   var nameary = namelist.split(',');
 
   /* Random 2 Lucky Person */
@@ -21,7 +21,7 @@ $(document).ready(function() {
     if (namechosen_id.indexOf(n) == -1) {
       namechosen_id.push(n);
       namechosen.push( nameary[n] );
-      $('.namelist ul').append('<li>' + nameary[n] + '</li>')
+      $('.namelist ol').append('<li>' + nameary[n] + '</li>')
     }
   }
 
@@ -124,6 +124,7 @@ $(document).ready(function() {
           $('.logo').removeClass('explode');
 
           if(namechosen.length == 0) {
+            console.log('end');
             $('.wrapper').addClass('end');
           }
         });

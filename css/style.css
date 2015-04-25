@@ -166,7 +166,7 @@ canvas {
   box-shadow: 0px 1px 0px 0px #54799c inset; }
 
 .end .button {
-  display: none; }
+  display: none !important; }
 
 @-webkit-keyframes whitePulse {
   from {
@@ -192,7 +192,8 @@ canvas {
     color: #fff; }
 
 .namelist {
-  display: none; }
+  display: none;
+  font-size: 30px; }
 
 .end .namelist {
   display: block; }

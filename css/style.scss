@@ -157,7 +157,7 @@ canvas {
 }
 
 .end .button {
-  display: none;
+  display: none !important;
 }
 
 @-webkit-keyframes whitePulse {
@@ -184,6 +184,7 @@ canvas {
 
 .namelist {
   display: none;
+  font-size: 30px;
 }
 
 .end .namelist {
