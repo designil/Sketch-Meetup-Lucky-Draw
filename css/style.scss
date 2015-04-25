@@ -121,8 +121,8 @@ canvas {
 }
 
 .button {
+  display: none;
   text-decoration: none;
-  display: inline-block;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#599Bdc), color-stop(100%,#3072B3));
   background: -moz-linear-gradient(center top, #599Bdc 0%, #3072B3 100%);
   -webkit-box-shadow: 0px 1px 0px 0px #7dc0ff inset, 0px -1px 0px 0px #1a3d5e inset, 0px 2px 2px 0px #d4d4d4;
@@ -156,6 +156,10 @@ canvas {
   box-shadow: 0px 1px 0px 0px #54799c inset;
 }
 
+.end .button {
+  display: none;
+}
+
 @-webkit-keyframes whitePulse {
   from { box-shadow: 0 0 100px 20px #fff; }
   50% { box-shadow: 0 0 100px 10px #FE751D; }
@@ -176,6 +180,14 @@ canvas {
     background: #295c8c;
     color: #fff;
   }
+}
+
+.namelist {
+  display: none;
+}
+
+.end .namelist {
+  display: block;
 }
 
 .typed-cursor{

@@ -6,6 +6,8 @@ $(document).ready(function() {
   // winner_count = Number of prize
   var winner_count = 2;
 
+  $('.button').css('display', 'inline-block');
+
   var audio = new Audio('sound/tantan.mp3');
   var nameary = namelist.split(',');
 
@@ -17,6 +19,7 @@ $(document).ready(function() {
     if (namechosen_id.indexOf(n) == -1) {
       namechosen_id.push(n);
       namechosen.push( nameary[n] );
+      $('.namelist ul').append('<li>' + nameary[n] + '</li>')
     }
   }
 
@@ -111,6 +114,10 @@ $(document).ready(function() {
       $('.wrapper').removeClass('animate');
       $('.namebox').removeClass('show');
       $('.logo').removeClass('explode');
+
+      if(namechosen.length == 0) {
+        $('.wrapper').addClass('end');
+      }
     });
 
 
