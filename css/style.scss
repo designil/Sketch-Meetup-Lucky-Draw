@@ -123,8 +123,8 @@ canvas {
 .button {
   display: none;
   text-decoration: none;
+  background: linear-gradient(to top, #599Bdc 0%, #3072B3 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#599Bdc), color-stop(100%,#3072B3));
-  background: -moz-linear-gradient(center top, #599Bdc 0%, #3072B3 100%);
   -webkit-box-shadow: 0px 1px 0px 0px #7dc0ff inset, 0px -1px 0px 0px #1a3d5e inset, 0px 2px 2px 0px #d4d4d4;
   -moz-box-shadow: 0px 1px 0px 0px #7dc0ff inset, 0px -1px 0px 0px #1a3d5e inset, 0px 2px 2px 0px #d4d4d4;
   box-shadow: 0px 1px 0px 0px #7dc0ff inset, 0px -1px 0px 0px #1a3d5e inset, 0px 2px 2px 0px #d4d4d4;
@@ -146,11 +146,11 @@ canvas {
 }
 .button:hover {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#82bbf0), color-stop(100%,#3072B3));
-  background: -moz-linear-gradient(center top, #82bbf0 0%, #3072B3 100%);
+  background: linear-gradient(to top, #82bbf0 0%, #3072B3 100%);
 }
 .button:active {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,#143a5e), color-stop(100%,#5ea3e0));
-  background: -moz-linear-gradient(center top, #143a5e 20%, #5ea3e0 100%);
+  background: linear-gradient(to top, #143a5e 20%, #5ea3e0 100%);
   -webkit-box-shadow: 0px 1px 0px 0px #54799c inset;
   -moz-box-shadow: 0px 1px 0px 0px #54799c inset;
   box-shadow: 0px 1px 0px 0px #54799c inset;
