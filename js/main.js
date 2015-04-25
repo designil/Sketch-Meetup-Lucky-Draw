@@ -9,7 +9,7 @@ $(document).ready(function() {
   var audio = new Audio('sound/tantan.mp3');
   var nameary = namelist.split(',');
 
-  /* Random 3 Lucky Person */
+  /* Random 2 Lucky Person */
   var namechosen_id = [];
   var namechosen = [];
   while(namechosen.length < winner_count) {
