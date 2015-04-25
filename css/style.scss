@@ -146,3 +146,13 @@ canvas {
   50% { box-shadow: 0 0 100px 10px #FE751D; }
   to { box-shadow: 0 0 100px 20px #fff; }
 }
+
+.namebox {
+  margin: auto;
+  width: 650px;
+  background: #ccc;
+  font-size: 50px;
+  padding: 0px 46px 0px;
+  text-shadow: 0px 1px 0px #000;
+  border: 10px solid #295c8c;
+}

@@ -1,4 +1,24 @@
 $(document).ready(function() {
+  // CAUTION: Use "" for namelist !! (some names use ')
+  // namelist = list of attendees from CSV
+  var namelist = "Akekapon Sangsai,Alongkorn Pornpoung,Apichart Khumtoon,Apichart Kohdee,Apisake Hongwitayakorn,Aria Arancia Langley,armariya,Armkung Suttichai,Arnon Ph,Arny Kimarteuk,Aru Bub,Asawin Mahotan,Atikom Laowsil,Benz Tanaratta,Berrii Bui,Bow Kraivanich,Budsayamas Jickabyte Ruangcharoe,BugNUT Design,BunaZz Rmutt,Buntana Chinta,Buzz Uaremorn,Chaiyaporn Belovely,Chaiyapruck Vachi,Chaiyarat Soontornprapee,Chaiyos YoShii,Chakkrisn Menn Talawat,chanachon promsak,Chanaphat Plearns Iamsrithong,Charkrid Thanhachartyothin,Chawanan Inkumnoi,Chayut Maneethai,Chonlathep Phosaithong,Daedear Chisawatanawanij,Daruma Tk,DEv Huuluuluu,Dev Xus,Dusit Neramit-aram,Eakchai Vasukraipaisarn,ʚḯɞ Baifern ʚḯɞ,Fareast Binsteera,Fern Wongngamkam,geensport,Genz RW,Golfz Surattikorn Chumkaew,IGolf Gt,inhumba,Ittipol Kaewprasert,Jabont Chamikorn,James Quek,Jesse Winchester,Jirayu Chamamahattana,Job Ster,JsPor K.,Kai,Kanyapat Seneewong,Karun Jaraslertsuwan,Khwanjira Cake Krathaykhwan,Kiatbanjong Chawnan,Kiim MK,Kitti Pariyaowknakun,Kittikun Kamrai,Kritsana Yuenyong,kuzer,Lahphim S. Arnon,Lamduan PrinCharat,Lattapon Yodsuwan,LinPing ChubChay,Manesz Satitnimankan (MICK),Matt Tortong Tonglor,Maykin Warasart,Mildiot Chaikiettiyot,Mintra Maru,Monkeys Pui,Nannalin Leankamnead,Narakorn Hirunyaphak,Nat Kansuwan,nattapon,Nawanun Pantisawas,Nicha Onnum,Niphon Jobsri,Nirattisai Jutapong,Nitisak Mooltreesri,No-Te Eksarunchai,Nongpanga Suwannasorn,Nonpawit Teerachetmongkol,Noom Narze,Nueng Wdv,Nunteema Supapon,NuTz,Oath Voravong,Oravee S.,Panjapol Chiemsombat,Panwat S,PaperJam Pammon,Passawon yamyuen,PATCHARA PATTANAKIMHUN,Patcharaporn Chaichuangchot,Patompong Pundee,Peraya S.,Petch Chaima,Pete Chuenprayoth,phawee,Phor Ketwongwiriya,Phuriwat Kun,Pirun Tirapibal,Pixel Paradise,Piyapong Hawj,polygonstudio,Pongsatorn Pipattham,Poom Laupattarakasem,Poramate Minsiri,Pussaaon Jungjatuporn,ray,Rutchawadee Virutchakul,Sally Mam,Samphan Sittiwantana,Sappawish Siripon,Sarah Blowers,sarun,Sarun Pinyarat,Sarunsak Phonwa,sasawat,Sittitsak Jiampotjaman,Somkamol Vasuvudhiroch,Sukrit Jitshob,Supanut Kmutnb,Supattra Saekow,SuperPad's Roddara,Sutinai Jaradwilaswanit,Suwitcha Sugthana,Svl2Nuk3,Tanasit Niyomsat,Tanet Arunthavornwong,Tarn Natnaree,Teedej Wara-asawapati,Teerawat Chanapai,Thanachot Wisuttismarn,Thitima,Tom Tom,tommykung007,Ukrid Krid Rorkib,Vichita Fongmala,Waleeporn Sukcharenporn,Wasin Kachapri (George),Wasit Jingjit,Watcharapong Kapongpang Wongwiwa,winadda,Wishaya Piyasirisin,Woraphon Tontaweewong,Woratana Perth,Worawoot Yoosawas,Xinming Zhao,Yai Pang Rum,Yugi5002";
+  
+  // winner_count = Number of prize
+  var winner_count = 2;
+
+  var nameary = namelist.split(',');
+
+  /* Random 3 Lucky Person */
+  var namechosen_id = [];
+  var namechosen = [];
+  while(namechosen.length < winner_count) {
+    var n = Math.floor(Math.random() * nameary.length);
+    if (namechosen_id.indexOf(n) == -1) {
+      namechosen_id.push(n);
+      namechosen.push( nameary[n] );
+    }
+  }
+
   /* Particle */
   var proton;
   var renderer;
@@ -52,5 +72,10 @@ $(document).ready(function() {
   /* Start Button */
   $('#start').on('click', function() {
     $('.wrapper').addClass('animate');
+
+    thisname = namechosen.pop();
+    thisname = thisname.replace(' ', '').replace('-', '').replace('(', '').replace(')', '');
+
+    console.log(thisname);
   });
 });
