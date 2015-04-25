@@ -6,6 +6,7 @@ $(document).ready(function() {
   // winner_count = Number of prize
   var winner_count = 2;
 
+  var audio = new Audio('sound/tantan.mp3');
   var nameary = namelist.split(',');
 
   /* Random 3 Lucky Person */
@@ -73,6 +74,9 @@ $(document).ready(function() {
   $('#start').on('click', function() {
     $('.wrapper').addClass('animate');
 
+    // Play song
+    audio.play();
+
     thisname = namechosen.pop();
     var thisname_sub = thisname.replace(' ', '').replace('-', '').replace('(', '').replace(')', '');
 
@@ -94,7 +98,7 @@ $(document).ready(function() {
     $('.namebox').empty().append('<span class="nameboxtype"></span>');
     $(".nameboxtype").typed({
       strings: [charchosen_string],
-      typeSpeed: 80,
+      typeSpeed: 60,
       callback: function() {
         // Show Answer
         $('.namebox').addClass('show').empty().text(thisname);
