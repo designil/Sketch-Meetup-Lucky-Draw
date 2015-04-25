@@ -46,7 +46,10 @@ body {
   z-index: 2;
   opacity: 0;
   -webkit-transition: 0.5s;
-          transition: 0.5s; }
+          transition: 0.5s;
+  -webkit-transform-origin: 50% 80%;
+      -ms-transform-origin: 50% 80%;
+          transform-origin: 50% 80%; }
 
 .animate .logo {
   opacity: 1;
@@ -58,6 +61,39 @@ body {
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out; }
+  .animate .logo.explode {
+    -webkit-animation-name: explode;
+            animation-name: explode;
+    -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@-webkit-keyframes explode {
+  from {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1; }
+
+  to {
+    -webkit-transform: scale(4, 4);
+            transform: scale(4, 4);
+    opacity: 0; } }
+
+@keyframes explode {
+  from {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    opacity: 1; }
+
+  to {
+    -webkit-transform: scale(4, 4);
+            transform: scale(4, 4);
+    opacity: 0; } }
 
 canvas {
   opacity: 0;
@@ -136,21 +172,22 @@ canvas {
 .namebox {
   margin: auto;
   width: 650px;
-  background: #ccc;
   font-size: 50px;
   padding: 0px 46px 0px;
   text-shadow: 0px 1px 0px #000;
-  border: 10px solid #295c8c; }
+  border: 10px solid #295c8c;
+  background: #fff;
+  color: #295c8c; }
   .namebox.show {
-    background: #fff;
-    color: #295c8c; }
+    background: #295c8c;
+    color: #fff; }
 
 .typed-cursor {
   opacity: 1;
   -webkit-animation: blink 0.7s infinite;
   animation: blink 0.7s infinite; }
 
-@keyframes blink {
+@-webkit-keyframes blink {
   0% {
     opacity: 1; }
 
@@ -160,7 +197,7 @@ canvas {
   100% {
     opacity: 1; } }
 
-@-webkit-keyframes blink {
+@keyframes blink {
   0% {
     opacity: 1; }
 

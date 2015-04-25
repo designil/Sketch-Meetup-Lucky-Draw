@@ -76,6 +76,8 @@ $(document).ready(function() {
     thisname = namechosen.pop();
     var thisname_sub = thisname.replace(' ', '').replace('-', '').replace('(', '').replace(')', '');
 
+    console.log(thisname, thisname_sub);
+
     // Random 3 Characters from name
     var charchosen_id = [];
     var charchosen = [];
