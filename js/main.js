@@ -104,7 +104,7 @@ $(document).ready(function() {
           }
         }
 
-        var charchosen_string = charchosen[0] + '... ^600' + charchosen[1] + '... ^600' + charchosen[2] + '... ^400';
+        var charchosen_string = charchosen[0] + '... ^600' + charchosen[1] + '... ^600' + charchosen[2] + '... ^2400';
 
         $('.namebox').empty().append('<span class="nameboxtype"></span>');
         $(".nameboxtype").typed({
